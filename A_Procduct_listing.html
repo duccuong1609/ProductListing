@@ -6,23 +6,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        #wrapper {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 91%;
+        }
+        /*HEADER*/
+        
         #header {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 100%;
+            width: 96.5%;
+            padding: 7px;
         }
         
-        #wrapper {
+        #Left_Header {
             display: flex;
-            flex-direction: relative;
-            width: 100%;
+            width: 20%;
+            justify-content: space-around;
+            color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            padding-left: 6%;
         }
         
-        #Left Header {
+        #Right_Header {
             display: flex;
+            flex-direction: row;
             width: 30%;
+            height: 29px;
+            justify-content: left;
+            align-items: center;
+        }
+        
+        #center_Header {
+            display: flex;
+            width: 20%;
+            justify-content: center;
+        }
+        
+        #Search_box {
+            display: inline-block;
+            position: relative;
+            top: -5px;
+            border: 1px solid rgb(223, 223, 223);
+            padding-left: 20px;
+            border-radius: 4px;
+            color: rgb(223, 223, 223);
+        }
+        
+        #Search {
+            width: 170px;
+            height: 34px;
+            border: none;
+            text-decoration: none;
+        }
+        
+         ::placeholder {
+            color: rgb(199, 199, 199);
+            opacity: 1;
+        }
+        
+        #img_SearchBox {
+            position: relative;
+            top: 8px;
+            left: -5px;
+        }
+        
+        #Left_item {
+            display: inline-block;
+        }
+        /*Banner*/
+        
+        #banner {
+            display: flex;
+            position: relative;
+        }
+        
+        #banner_des {
+            position: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(63, 63, 63);
+            top: 20%;
+            left: 8%;
         }
     </style>
 </head>
@@ -30,21 +100,37 @@
 <body>
     <div id="wrapper">
         <div id="header">
-            <div id="Left Header">
-                <div id="Left_item" style="display :inline-block">Shop</div>
-                <div id="Left_item" style="display :inline-block">Offers</div>
-                <div id="Left_item" style="display :inline-block">Our story</div>
-                <div id="Left_item" style="display :inline-block">Blog</div>
+            <div id="Left_Header">
+                <div id="Left_item">Shop</div>
+                <div id="Left_item">Offers</div>
+                <div id="Left_item">Our story</div>
+                <div id="Left_item">Blog</div>
             </div>
-            <div id="center Header">
+            <div id="center_Header">
                 <img src="1_ProductListing/logo.png" alt="">
             </div>
-            <div id="right Header">
-                <input type="text" required="" id="Search">
-                <img src="1_ProductListing/Cart 1.png" alt="">
-                <img src="1_ProductListing/User 1.png" alt="">
+            <div id="right_Header">
+                <div id="Search_box">
+                    <i class="fa fa-search" style="font-size: 15px;"></i>
+                    <input type="text" required="" id="Search" placeholder="Search product...">
+                </div>
+                <img src="1_ProductListing/Cart 1.png" alt="" id="img_SearchBox">
+                <img src="1_ProductListing/User 1.png" alt="" id="img_SearchBox">
             </div>
         </div>
+        <div id="banner">
+            <img src="1_ProductListing/banner.png" alt="">
+            <p id="banner_des">
+                <font style="font-weight: bold;font-size: 56px;" padding-bottom:10px;>Gift for your skin</font><br>
+                <font style="font-size: 23.5px;font-weight: normal;">
+                    Aliquip fugiat ipsum nostrud ex et eu incididunt
+                </font><br>
+                <font style="font-size: 23.5px;font-weight: normal;">
+                    quis minim dolore excepteur voluptate
+                </font><br>
+            </p>
+        </div>
+    </div>
     </div>
 </body>
 
