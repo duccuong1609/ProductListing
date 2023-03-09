@@ -64,12 +64,14 @@
                     padding-left: 20px;
                     border-radius: 4px;
                     color: rgb(223, 223, 223);
+                    transition: 2s;
                 }
                 #Search_box >i{
                     position: relative;
                     right: 4.5%;
                 }
                 #Search {
+                    outline: none !important;
                     width: 160px;
                     height: 33px;
                     border: none;
@@ -101,7 +103,7 @@
         #banner {
             display: flex;
             position: relative;
-            left: 30px;
+            left: 2.7%;
         }
         
         #banner_des {
@@ -128,24 +130,38 @@
             width: 47.7%;
             min-width: 422px;
             }
-                #left_menu_item{
+                .left_menu_item{
                     width: 40%;
                     min-width: 143px;
                     font-size: 20px;
+                    padding: 3.4%;
+                    padding-left: 0px;
+                    padding-right: 0px;
                     text-align: center;
+                    transition: 0.3s;
+                }
+                #left_menu_item_1,#left_menu_item_2,#left_menu_item_3{
+                    display: block;
                     text-decoration: none;
                     color: rgb(69, 157, 122);
-                    padding: 3.4%;
-                    padding-left: 3.8%;
-                    padding-right: 3.8%;
-                    border-right: 1px solid transparent;
-                    border-image: url(1_ProductListing/border.jpg) 3.5 stretch;
+                    width: 99.5%;
+                    border-right: 1px solid rgb(69, 157, 122);
                 }
-                #left_menu_item:hover{
-                    color: white;
+                .left_menu_item:hover{
                     background-color: rgb(69, 157, 122);
                     border: 1px rgb(69, 157, 122);
+                    position: relative;
                     border-radius: 5px;
+                    right: 1px;
+                }
+                .left_menu_item:hover > #left_menu_item_1{
+                    color: white;
+                }
+                .left_menu_item:hover > #left_menu_item_2{
+                    color: white;
+                }
+                .left_menu_item:hover > #left_menu_item_3{
+                    color: white;
                 }
             #right_menu_bar{
             display: flex;
@@ -161,6 +177,7 @@
                     height: 52px;
                     left: 4%;
                     top:4%;
+                    transition: 2s;
                 }
                 #Search_box2>i{
                     padding-left: 6.2%;
@@ -172,6 +189,7 @@
                     width: 189px;
                     height: 50px;
                     border:none;
+                    outline: none !important;
                     font-size: 17.5px;
                 }
                 #Search2::placeholder{
@@ -199,12 +217,99 @@
                     color: rgb(169, 167, 167);
                     font-weight: bold;
                 }
-
+        /*Product*/
+        #Product{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: space-between;
+            width: 84%;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 4.6%;
+        }   
+            /*Line1*/
+            #Product_Line_1{
+                display: flex;
+                width: 103.7%;
+                justify-content: space-between;
+                margin-bottom: 5%;
+            }
+                /*product_item*/   
+                .Product_Line_1_Item{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    padding: 2px;
+                }
+                .Product_Line_1_Item:hover{
+                    box-shadow: 5px 5px rgb(245, 245, 245);
+                }
+                /*price + purchase button*/
+                #Purchase{
+                    display: flex;
+                    position: relative;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                #purchase_button{
+                    background-color: rgb(250, 250, 250);
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                }
+                #purchase_button:active{
+                    transform: translateX(2px) translateY(2px);
+                }
+                /*best-seller and new tag*/
+                #Best-seller{
+                    position: absolute;
+                    background-color: rgb(255, 201, 112);
+                    color: rgb(57, 4, 57,0.8);
+                    top: 12px;
+                    right: 12px;
+                    padding: 5.6px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    border: 1px solid rgb(255, 201, 112);
+                    border-radius: 20px;
+                    font-size: 13px;
+                    animation: glowing 0.8s infinite;
+                }
+                @keyframes glowing {
+                    0% { color: rgb(57, 4, 57,0.8)}
+                    50% { color: red}
+                    100% { color: rgb(57, 4, 57,0.8)}
+                }
+            #NextPage{
+                align-self: center;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 23%;
+                height: 35px;
+                margin-top: 2.1%;
+            }
+            #NextPage > .page{
+                text-decoration: none;
+                color: gray;
+                padding-top: 8px;
+                width: 35px;
+                height: 27px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            #NextPage > .page:hover{
+                border: 1px solid rgb(240, 250, 245);
+                background-color: rgb(240, 250, 245);
+                color: rgb(69, 157, 122);
+                border-radius: 50%;
+            }
     </style>
 </head>
 
 <body>
     <div id="wrapper">
+        <!-- Header -->
         <div id="header">
             <div id="Left_Header">
                 <a href="#" id="Left_item">Shop</a>
@@ -224,6 +329,7 @@
                 <img src="1_ProductListing/User 1.png" alt="" id="img_SearchBox">
             </div>
         </div>
+        <!-- Banner -->
         <div id="banner">
             <img src="1_ProductListing/banner.png" alt="">
             <p id="banner_des">
@@ -236,11 +342,18 @@
                 </font><br>
             </p>
         </div>
+        <!-- Menu -->
         <div id="menu_bar">
             <div id="left_menu_bar">
-                <a href="#" id="left_menu_item">All Products</a>
-                <a href="#" id="left_menu_item">Face</a>
-                <a href="#" id="left_menu_item" style="border: none;">Body</a>
+                <div class="left_menu_item">
+                    <a href="#"  id="left_menu_item_1">All Products</a>
+                </div>
+                <div class="left_menu_item">
+                    <a href="#"  id="left_menu_item_2">Face</a>
+                </div>
+                <div class="left_menu_item" >
+                    <a href="#" id="left_menu_item_3" style="border: none;">Body</a>
+                </div>
             </div>
             <div id="right_menu_bar">
                 <div id="Search_box2">
@@ -251,6 +364,157 @@
                     <div style="padding-right: 10px;">Sort by</div>
                     <img src="1_ProductListing/sort.png" alt="" width="22px" height="19px">
                 </div>
+            </div>
+        </div>
+        <!-- Product -->
+        <div id="Product">
+            <div id="Product_Line_1">
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line1_Item1.png" alt="">
+                    <div id="Best-seller">Best-seller</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$32</font><font style="color: gray;"> $42</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line1_Item2.png" alt="">
+                    <div id="Best-seller">Best-seller</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$22</font><font style="color: gray;"> $28</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line1_Item3.png" alt="">
+                    <div id="Best-seller">Best-seller</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$18</font><font style="color: gray;"> $26</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line1_Item4.png" alt="">
+                    <div id="Best-seller">Best-seller</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$48</font><font style="color: gray;"> $56</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- line 2 -->
+            <div id="Product_Line_1">
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line2_Item1.png" alt="">
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$31</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line2_Item2.png" alt="">
+                    <div id="Best-seller">New</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$40</font><font style="color: gray;"> $48</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line2_Item3.png" alt="">
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$26</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line2_Item4.png" alt="">
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$18</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- line 3 -->
+            <div id="Product_Line_1">
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line3_Item1.png" alt="">
+                    <div id="Best-seller">New</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$52</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line3_Item2.png" alt="">
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$47</font><font style="color: gray;"> $42</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line3_Item3.png" alt="">
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$44</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+                <div class="Product_Line_1_Item">
+                    <img src="1_ProductListing/Line3_Item4.png" alt="">
+                    <div id="Best-seller">New</div>
+                    <p><font style="font-size: 20px;font-weight: bold;">Product title</font><br><font style="color: gray;font-size: 15.5px;">Labore sint ipsum dolore mollit</font></p>
+                    <div id="Purchase">
+                        <span><font style="font-size: 30px;font-weight:bolder;">$32</font><font style="color: gray;"> $42</font></span>
+                        <button type="submit" id="purchase_button">
+                            <img src="1_ProductListing/Purchase_button.png" alt="" height="44px" width="44px">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- NextPage_bar -->
+            <div id="NextPage">
+                <button type="submit" id="purchase_button">
+                    <img src="1_ProductListing/previous.png" alt="" height="44px" width="44px">
+                </button>
+                <a href="#" class="page">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <button type="submit" id="purchase_button">
+                    <img src="1_ProductListing/next.png" alt="">
+                </button>
             </div>
         </div>
     </div>
